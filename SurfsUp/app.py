@@ -40,28 +40,22 @@ app = Flask(__name__)
 def welcome():
     """Available Hawaii Climate Analysis api routes"""
     return (
-        f"Hawaii Climate API<br/>"
-        f"----------------------------------------<br/>"
-        f"Available Routes:<br/>"
-        f"----------------------------------------<br/>"
-        f"  <br/>"
-        f"----------------------------------------<br/>"
-        f"To retrieve precipition data for the last 12 months<br/>"
+        f"<h1><strong font-size:100px>Hawaii Climate API</strong></h1><br/>"
+        f"See below for Available Routes and as well as a brief description of returned requests<br/>"
+        f"-------------------------------------------------------------------------------<br/>"
+        f"To retrieve JSON list of precipition for the last 12 months<br/>"
         f"USE:  /api/v1.0/precipitation<br/>"
-        f"----------------------------------------<br/>"
-        f"  <br/>"
-        f"To return the list of stations from the dataset<br/>"
+        f"-------------------------------------------------------------------------------<br/>"
+        f"To return a JSON list of stations from the dataset<br/>"
         f"USE: /api/v1.0/stations<br/>"
-        f"----------------------------------------<br/>"
-        f"  <br/>"
+        f"-------------------------------------------------------------------------------<br/>"
         f"To return JSON list of temperature observations for the previous year<br/>"
         f"USE:  /api/v1.0/tobs<br/>"
-        f"----------------------------------------<br/>"
-        f"  <br/>"
+        f"-------------------------------------------------------------------------------<br/>"
         f"To make calls for Min., Max. and Avg. Temp:<br/>"
         f"USE: /api/v1.0/<start><end><br/>"
         f"specify a start date in Y-m-d format (e.g., /api/v1.0/2016-05-18) OR<br/>"
-        f"specify a date range in Y-m-d format (e.g., /api/v1.0/2016-05-18/2016-06-18)<br/>"
+        f"specify a date range (startDate/endDate) in Y-m-d format (e.g., /api/v1.0/2016-05-18/2016-06-18)<br/>"
    
     )
 #------------------------------------------------------------------------#
@@ -156,6 +150,8 @@ def tobs():
 #------------------------------------------------------------------------#
 @app.route("/api/v1.0/<start>")
 def tempmerature_start(start):
+     """" Return a JSON list of the minimum temperature, the average temperature, 
+        and the maximum temperature for a specified start or start-end range."""
      # Create a session (link) from Python to the DB
      session = Session(engine)
 
@@ -188,5 +184,46 @@ def tempmerature_start(start):
     # Return a JSON list of temperature observations for the previous year
      return jsonify(start_stats_list)
 
+#------------------------------------------------------------------------#
+@app.route("/api/v1.0/<start>/<end>")
+def tempmerature_start_end(start,end):
+     """For a specified start date and end date, calculate TMIN, TAVG, and TMAX 
+        for the dates from the start date to the end date, inclusive."""
+     # Create a session (link) from Python to the DB
+     session = Session(engine)
+
+    #create a list of query
+     sel_query = [
+                Measurement.date,
+                func.min(Measurement.tobs),
+                func.max(Measurement.tobs), 
+                func.round(func.avg(Measurement.tobs),2)
+             ]
+     # parse the list of query into the query
+     start_end_stats = session.query(*sel_query).filter\
+                    (Measurement.date >= start).\
+                    filter(Measurement.date <= end).\
+                     group_by(Measurement.date).order_by(Measurement.date).all()
+     
+     #close the session for tobs route
+     session.close()
+
+    # Create a dictionary from the row data and append to a list 
+     start_end_stats_list = []
+     
+     for date,min,max,avg in start_end_stats:
+        start_end_stats_dict = {}
+        start_end_stats_dict["date"] = date
+        start_end_stats_dict["Min Temp"] = min
+        start_end_stats_dict["Max Temp"] = max
+        start_end_stats_dict["Avg Temp"] = avg
+        start_end_stats_list.append(start_end_stats_dict)
+
+    # Return a JSON list of temperature observations for the previous year
+     return jsonify(start_end_stats_list)
+
+
+################################################################
+# Run app and set debug to True
 if __name__ == '__main__':
     app.run(debug=True)
