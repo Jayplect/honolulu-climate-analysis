@@ -1,7 +1,7 @@
 ## Desciption
-According to traveller's guide Honolulu, the capital city of Hawaii is one of the best spot that appeals to wave-chasers and sunbathers alike. <p align="center"><img width="500" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/f63ce47b-f391-4f67-8f71-83d054d6ca27></p>
+According to traveller's guide Honolulu, the capital city of Hawaii is one of the best spot that appeals to wave-chasers and sunbathers alike. It is regarded as the state's cultural and business hub with a flurry of tourists annually. <p align="center"><img alt=Honolulu width="600" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/f63ce47b-f391-4f67-8f71-83d054d6ca27></p>
 
-It is regarded as the state's cultural and business hub with a flurry of tourists annually. I decided to treat myself to a long holiday vacation in Honolulu, Hawaii. To help with my trip planning, I decided to do a climate analysis about the area. The following sections outline the steps that I took to accomplish this task.
+ I decided to treat myself to a long holiday vacation in Honolulu, Hawaii. To help with my trip planning, I decided to do a climate analysis about the area. The following sections outline the steps that I took to accomplish this task.
 
 ## Dependencies used
 </br><img width="190" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/a4c3d377-fb96-4fcb-a6c1-0346e1d5dc2f>
