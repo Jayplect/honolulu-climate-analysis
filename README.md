@@ -17,7 +17,36 @@
 ### Step 2: 
 
 ### Step 2: 
--
+To take it a step further, I created an app 
+To retrieve JSON list of precipition for the last 12 months
+
+USE:  
+    
+      /api/v1.0/precipitation"
+    
+To return a JSON list of stations from the dataset
+
+USE: 
+
+      /api/v1.0/stations<br/>"
+
+To return JSON list of temperature observations for the previous year<br/>"
+
+USE:  
+
+      /api/v1.0/tobs<br/>"
+
+To make calls for Min., Max. and Avg. Temp
+   
+    #specify a start date in Y-m-d format 
+
+      /api/v1.0/2016-05-18
+
+    #specify a date range (startDate/endDate) in Y-m-d format 
+        
+      /api/v1.0/2016-05-18/2016-06-18
+   
+ 
 ## Summary of Results 
 
 ## References
