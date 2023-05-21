@@ -1,4 +1,4 @@
-## Desciption
+## Description
 According to traveller's guide Honolulu, the capital city of Hawaii is one of the best spot that appeals to wave-chasers and sunbathers alike. It is regarded as the state's cultural and business hub with a flurry of tourists annually. <p align="center"><img alt=Honolulu width="600" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/f63ce47b-f391-4f67-8f71-83d054d6ca27></p>
 
 I decided to treat myself to a long holiday vacation in Honolulu, Hawaii. To help with my trip planning, I decided to do a climate analysis about the area. The following sections outline the steps that I took to accomplish this task.
@@ -80,7 +80,7 @@ To take it a step further, I designed a <a href= https://github.com/Jayplect/sql
       /api/v1.0/2016-05-18/2016-06-18
    
 ## Summary of Results 
-From the precippitation analysis, it can be inferred that Honolulu received fewer than 7 inches of precipitation over the last 12 months with a large record of high temperatures for the same period. This may indeed confirm why the city is one of the best sites wave-chasers and sunbathers lovers.
+From the precippitation analysis, it can be inferred that Honolulu received fewer than 7 inches of precipitation over the last 12 months with a large record of high temperatures for the same period. This may indeed confirm why the city is one of the best sites for wave-chasers and sunbathers lovers.
 
 ## References
 Menne, M.J., I. Durre, R.S. Vose, B.E. Gleason, and T.G. Houston, 2012: An overview of the Global Historical Climatology Network-Daily Database. Journal of Atmospheric and Oceanic Technology, 29, 897-910, https://journals.ametsoc.org/view/journals/atot/29/7/jtech-d-11-00103_1.xml
