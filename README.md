@@ -4,13 +4,13 @@ According to traveller's guide Honolulu, the capital city of Hawaii is one of th
  I decided to treat myself to a long holiday vacation in Honolulu, Hawaii. To help with my trip planning, I decided to do a climate analysis about the area. The following sections outline the steps that I took to accomplish this task.
 
 ## Dependencies used
-</br><img width="190" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/a4c3d377-fb96-4fcb-a6c1-0346e1d5dc2f>
-<img width="140" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/9058e990-73e0-4499-835f-22e7968e94ec>
-<img width="130" src = https://user-images.githubusercontent.com/107348074/236379504-0f0e8534-6435-4924-b72d-283946e03c4b.png>
-<img width="130" src = https://user-images.githubusercontent.com/107348074/236379877-e0e3b90e-217f-4700-ade2-df8b5ef8f23b.png>
-<img width="130" src =https://user-images.githubusercontent.com/107348074/236379730-0286f397-c9e0-4e0c-a91c-e07d64f6ceec.png>
-<img width="130" src = https://user-images.githubusercontent.com/107348074/236379825-80dc02bc-46c1-46fa-9634-dc28cdcb5704.png>
-<img width="200" src = https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/d11b1cb1-1f41-461f-80f9-321b6429fc21>
+</br><img width="200" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/a4c3d377-fb96-4fcb-a6c1-0346e1d5dc2f>
+<img width="160" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/9058e990-73e0-4499-835f-22e7968e94ec>
+<img width="180" src = https://user-images.githubusercontent.com/107348074/236379504-0f0e8534-6435-4924-b72d-283946e03c4b.png>
+<img width="180" src = https://user-images.githubusercontent.com/107348074/236379877-e0e3b90e-217f-4700-ade2-df8b5ef8f23b.png>
+<img width="180" src =https://user-images.githubusercontent.com/107348074/236379730-0286f397-c9e0-4e0c-a91c-e07d64f6ceec.png>
+<img width="180" src = https://user-images.githubusercontent.com/107348074/236379825-80dc02bc-46c1-46fa-9634-dc28cdcb5704.png>
+<img width="240" src = https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/d11b1cb1-1f41-461f-80f9-321b6429fc21>
 <img width="200" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/0606fec5-e79a-4c10-b968-2a0178752d76>
 
 ## Summary of Dataset
