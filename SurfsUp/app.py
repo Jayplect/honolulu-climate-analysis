@@ -38,10 +38,10 @@ app = Flask(__name__)
 #################################################
 @app.route("/")
 def welcome():
-    """Available Hawaii Climate Analysis api routes"""
+    """Available Honolulu, Hawaii Climate Analysis api routes"""
     return (
-        f"<h1><strong font-size:100px>Hawaii Climate API</strong></h1><br/>"
-        f"See below for Available Routes and as well as a brief description of returned requests<br/>"
+        f"<h1><strong font-size:100px>Honolulu, Hawaii Climate API</strong></h1><br/>"
+        f"See below for Available Routes as well as a brief description of returned requests<br/>"
         f"-------------------------------------------------------------------------------<br/>"
         f"To retrieve JSON list of precipition for the last 12 months<br/>"
         f"USE:  /api/v1.0/precipitation<br/>"
