@@ -16,7 +16,7 @@ I decided to treat myself to a long holiday vacation in Honolulu, Hawaii. To hel
 ## Summary of Dataset
 The data used for this project was culled from the Global Historical Climatology Network-Daily Database. The full reference has been provided in the reference section.
 ## Project Steps
-### Step 1: Analyzed and Explored the Climate Data 
+### Step 1: Analyzing and Exploring the Climate Data 
 In this section, I used Python and SQLAlchemy to do a basic climate analysis and data exploration of the climate database. Specifically, I used SQLAlchemy ORM queries, Pandas, and Matplotlib. In order to reflect tables into SQLAlchemy ORM use these steps:
 
 - Use the SQLAlchemy create_engine() function to connect to the SQLite database:
@@ -46,7 +46,7 @@ To see the weather variation and pattern of Honolulu, I analysed precipitation f
 Furthermore, I wanted to view the temperature distribution over Honolulu. I decided to use temperature meaurements from the most active weather station in the database based on the assumption that the most active station would almost certainly have fewer missing data. To achieve this, I designed a query to calculate the total number of stations in the dataset and another query to find the most-active stations (i.e., the station that have the most rows). Lastly, I designed a query that calculates the lowest, highest, and average temperatures that filters on the most-active station id found in the previous query and ploted the results as a histogram with bins=12, as the following image shows:
 <p align="center"><img width="550" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/804218f1-225f-480a-a0c4-5a516efc5606></p>   
 
-### Step 2: Design the Climate App
+### Step 2: Designing the Climate App
 To take it a step further, I designed a <a href= https://github.com/Jayplect/sqlalchemy-challenge/blob/main/SurfsUp/app.py>Flask API</a> to return the JSON data based on the queries just developed above. To do so, I used Flask to create my routes. The available routes as well as a brief description of returned requests are provide below.
 
 - Within the directory the app is located run:
