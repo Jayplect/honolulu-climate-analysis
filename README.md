@@ -80,7 +80,7 @@ To take it a step further, I designed a <a href= https://github.com/Jayplect/sql
       /api/v1.0/2016-05-18/2016-06-18
    
 ## Summary of Results 
-From the precippitation analysis, it can be inferred that Honolulu received fewer than 7 inches of precipitation over the last 12 months with a large record of high temperatures for the same period. This may indeed confirm why the city is one of the best sites for wave-chasers and sunbathers lovers.
+From the precippitation analysis, it was observed that Honolulu received fewer than 7 inches of precipitation over the last 12 months with a large record of high temperatures for the same period. These weather conditions seem perfect for wave-chasers and sunbathers lovers may indeed confirm why the city is one of the favorite sites for vacationing.
 
 ## References
 Menne, M.J., I. Durre, R.S. Vose, B.E. Gleason, and T.G. Houston, 2012: An overview of the Global Historical Climatology Network-Daily Database. Journal of Atmospheric and Oceanic Technology, 29, 897-910, https://journals.ametsoc.org/view/journals/atot/29/7/jtech-d-11-00103_1.xml
