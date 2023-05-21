@@ -19,17 +19,17 @@ The data used for this project was culled from the Global Historical Climatology
 ### Step 1: Analyzed and Explored the Climate Data 
 In this section, I used Python and SQLAlchemy to do a basic climate analysis and data exploration of the climate database. Specifically, I used SQLAlchemy ORM queries, Pandas, and Matplotlib. In order to reflect tables into SQLAlchemy ORM use these steps:
 
-- Use the SQLAlchemy create_engine() function to connect to the SQLite database.
+- Use the SQLAlchemy create_engine() function to connect to the SQLite database:
         
         engine = create_engine("sqlite:///../Resources/hawaii.sqlite")
         
-- Use the SQLAlchemy automap_base() function to reflect the tables into classes
+- Use the SQLAlchemy automap_base() function to reflect the tables into classes:
 
         Base = automap_base()
         Base.prepare(autoload_with=engine)
         Base.classes.keys()
         
-- Link Python to the database by creating a SQLAlchemy session.
+- Link Python to the database by creating a SQLAlchemy session:
         
         session = Session(engine)
         
@@ -48,13 +48,13 @@ Furthermore, I wanted to view the temperature distribution over Honolulu. I deci
 ### Step 2: Design the Climate App
 To take it a step further, I designed a <a href= https://github.com/Jayplect/sqlalchemy-challenge/blob/main/SurfsUp/app.py>Flask API</a> to return the JSON data based on the queries just developed above. To do so, I used Flask to create my routes. The available routes as well as a brief description of returned requests are provide below.
 
-Within the directory the app is located run:
+- Within the directory the app is located run:
         
-        python app.py
+       python app.py
         
- - Start at the homepage. All the available routes are provided on this page
+ - Start at the homepage. All the available routes are provided on this page:
       
-      /
+       /  
       
 - To retrieve JSON list of precipition for the last 12 months use:  
     
@@ -68,7 +68,7 @@ Within the directory the app is located run:
 
       /api/v1.0/tobs<br/>"
 
-- To make calls for Min., Max. and Avg. Temp
+- To make calls for Min., Max. and Avg. Temp:
    
     #specify a start date in Y-m-d format 
 
