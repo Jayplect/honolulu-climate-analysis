@@ -46,43 +46,29 @@ To see the weather variation and pattern of Honolulu, I analysed precipitation f
 Furthermore, I wanted to view the temperature distribution over Honolulu. I decided to use temperature meaurements from the most active weather station in the database based on the assumption that the most active station would almost certainly have fewer missing data. To achieve this, I designed a query to calculate the total number of stations in the dataset and another query to find the most-active stations (i.e., the station that have the most rows). Lastly, I designed a query that calculates the lowest, highest, and average temperatures that filters on the most-active station id found in the previous query and ploted the results as a histogram with bins=12, as the following image shows:
 <p align="center"><img width="550" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/804218f1-225f-480a-a0c4-5a516efc5606></p>     
 ### Step 2: Design the Climate App
-In this phase, I designed a Flask API based on the queries that you just developed. To do so, use Flask to create your routes as follows:
-/
-Start at the homepage.
-List all the available routes.
-/api/v1.0/precipitation
-Convert the query results from your precipitation analysis (i.e. retrieve only the last 12 months of data) to a dictionary using date as the key and prcp as the value.
-Return the JSON representation of your dictionary.
-/api/v1.0/stations
-Return a JSON list of stations from the dataset.
-/api/v1.0/tobs
-Query the dates and temperature observations of the most-active station for the previous year of data.
-Return a JSON list of temperature observations for the previous year.
-/api/v1.0/<start> and /api/v1.0/<start>/<end>
-Return a JSON list of the minimum temperature, the average temperature, and the maximum temperature for a specified start or start-end range.
-For a specified start, calculate TMIN, TAVG, and TMAX for all the dates greater than or equal to the start date.
-For a specified start date and end date, calculate TMIN, TAVG, and TMAX for the dates from the start date to the end date, inclusive.
-
-
-To take it a step further, I created an <a href= https://github.com/Jayplect/sqlalchemy-challenge/blob/main/SurfsUp/app.py>app</a> to return the JSON data used in visualization. The available routes and as well as a brief description of returned requests are provide below.
+To take it a step further, I designed a <a href= https://github.com/Jayplect/sqlalchemy-challenge/blob/main/SurfsUp/app.py>Flask API</a> to return the JSON data based on the queries just developed above. To do so, I used Flask to create my routes. The available routes as well as a brief description of returned requests are provide below.
 
 Within the directory the app is located run:
         
         python app.py
         
-To retrieve JSON list of precipition for the last 12 months use:  
+ - Start at the homepage. All the available routes are provided on this page
+      
+      /
+      
+- To retrieve JSON list of precipition for the last 12 months use:  
     
       /api/v1.0/precipitation"
     
-To return a JSON list of stations from the dataset use: 
+- To return a JSON list of stations from the dataset use: 
 
       /api/v1.0/stations<br/>"
 
-To return JSON list of temperature observations for the previous year use:  
+- To return JSON list of temperature observations for the previous year use:  
 
       /api/v1.0/tobs<br/>"
 
-To make calls for Min., Max. and Avg. Temp
+- To make calls for Min., Max. and Avg. Temp
    
     #specify a start date in Y-m-d format 
 
