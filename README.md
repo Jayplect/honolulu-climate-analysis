@@ -11,7 +11,7 @@ According to traveller's guide Honolulu, the capital city of Hawaii is one of th
 <img width="130" src =https://user-images.githubusercontent.com/107348074/236379730-0286f397-c9e0-4e0c-a91c-e07d64f6ceec.png>
 <img width="130" src = https://user-images.githubusercontent.com/107348074/236379825-80dc02bc-46c1-46fa-9634-dc28cdcb5704.png>
 <img width="200" src = https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/d11b1cb1-1f41-461f-80f9-321b6429fc21>
-
+<img width="200" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/0606fec5-e79a-4c10-b968-2a0178752d76>
 
 ## Summary of Dataset
 The data used for this project was culled from the Global Historical Climatology Network-Daily Database. The full reference has been provided in the reference section.
@@ -33,38 +33,20 @@ In this section, I used Python and SQLAlchemy to do a basic climate analysis and
         
         session = Session(engine)
         
-After reflecting tables into SQLAlchemy ORM, I performed a precipitation analysis and then a station analysis by completing the steps in the following two subsections.
-- Precipitation Analysis
-Find the most recent date in the dataset.
-Using that date, get the previous 12 months of precipitation data by querying the previous 12 months of data.
-Select only the "date" and "prcp" values.
-Load the query results into a Pandas DataFrame. Explicitly set the column names.
-Sort the DataFrame values by "date".
-Plot the results by using the DataFrame plot method, as the following image shows:
-
-
-<p align="center"><img width="550" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/3461b86d-8b1f-4fb9-851a-82f52fd56f8d></p>
-- Station Analysis
-Design a query to calculate the total number of stations in the dataset.
-Design a query to find the most-active stations (that is, the stations that have the most rows). To do so, complete the following steps:
-List the stations and observation counts in descending order.
-Answer the following question: which station id has the greatest number of observations?
-Design a query that calculates the lowest, highest, and average temperatures that filters on the most-active station id found in the previous query.
-Design a query to get the previous 12 months of temperature observation (TOBS) data. To do so, complete the following steps:
-Filter by the station that has the greatest number of observations.
-Query the previous 12 months of TOBS data for that station.
-Plot the results as a histogram with bins=12, as the following image shows:
-
-<p align="center"><img width="550" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/804218f1-225f-480a-a0c4-5a516efc5606></p>
-
-Close session using:
+- To close session at the end of the query:
 
         session.close()
         
-### Step 2: Design the Climate App
+After reflecting tables into SQLAlchemy ORM, I performed a precipitation analysis and then a station analysis by completing the steps in the following two subsections.
+- Precipitation Analysis
+To see the weather variation and pattern of Honolulu, I analysed precipitation for the last 12 months. I began by querying the most recent date in the dataset. Using that date as an enpoint, I then queryied the previous 12 months of data, loaded the results into a Pandas DataFrame and ploted the results using the DataFrame plot method (and pytplot from matplotlib to add other plotting parameters), as the following image shows:
+<p align="center"><img width="550" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/3461b86d-8b1f-4fb9-851a-82f52fd56f8d></p>
 
-### Step 2: 
-I design a Flask API based on the queries that you just developed. To do so, use Flask to create your routes as follows:
+- Station Analysis
+Furthermore, I wanted to view the temperature distribution over Honolulu. I decided to use temperature meaurements from the most active weather station in the database based on the assumption that the most active station would almost certainly have fewer missing data. To achieve this, I designed a query to calculate the total number of stations in the dataset and another query to find the most-active stations (i.e., the station that have the most rows). Lastly, I designed a query that calculates the lowest, highest, and average temperatures that filters on the most-active station id found in the previous query and ploted the results as a histogram with bins=12, as the following image shows:
+<p align="center"><img width="550" src =https://github.com/Jayplect/sqlalchemy-challenge/assets/107348074/804218f1-225f-480a-a0c4-5a516efc5606></p>     
+### Step 2: Design the Climate App
+In this phase, I designed a Flask API based on the queries that you just developed. To do so, use Flask to create your routes as follows:
 /
 Start at the homepage.
 List all the available routes.
