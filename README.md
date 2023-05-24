@@ -69,7 +69,15 @@ To take it a step further, I designed a <a href= https://github.com/Jayplect/sql
 
       /api/v1.0/tobs<br/>"
 
-- To make calls for Min., Max. and Avg. Temp:
+- Make calls for Min., Max. and Avg. Temp for 2015-10-03:<br/>"
+        
+      /api/v1.0/2015-10-03<br/>"
+      
+- Make calls for Min., Max. and Avg. Temp for a specified period e.g., 2016-05-18 to 2016-06-18 :<br/>"
+      
+      /api/v1.0/2015-05-18/2016-06-18<br/>"
+
+- In addition, to make calls for the summary stats (Min., Max. and Avg. Temp) for dates of your choice:
    
     #specify a start date in Y-m-d format 
 
