@@ -73,7 +73,7 @@ To take it a step further, I designed a <a href= https://github.com/Jayplect/sql
         
       /api/v1.0/2015-10-03
       
-- Make calls for Min., Max. and Avg. Temp for a specified period e.g., 2016-05-18 to 2016-06-18 :
+- Make calls for Min., Max. and Avg. Temp for a specified period e.g., 2016-05-18 to 2016-06-18:
       
       /api/v1.0/2015-05-18/2016-06-18
 
