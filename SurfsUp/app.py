@@ -1,6 +1,7 @@
 # Import the dependencies.
 import numpy as np
 import datetime as dt
+import json
 from datetime import datetime as dte
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
@@ -52,8 +53,13 @@ def welcome():
         f"To return JSON list of temperature observations for the previous year<br/>"
         f"USE:  /api/v1.0/tobs<br/>"
         f"-------------------------------------------------------------------------------<br/>"
-        f"To make calls for Min., Max. and Avg. Temp:<br/>"
-        f"USE: /api/v1.0/<start><end><br/>"
+        f"Make calls for Min., Max. and Avg. Temp for 2015-10-03:<br/>"
+        f"USE:  /api/v1.0/2015-10-03<br/>"
+        f"-------------------------------------------------------------------------------<br/>"
+        f"Make calls for Min., Max. and Avg. Temp for a specified period e.g., 2016-05-18 to 2016-06-18 :<br/>"
+        f"USE:  /api/v1.0/2015-05-18/2016-06-18<br/>"
+        f"-------------------------------------------------------------------------------<br/>"
+        f"Additional: To make calls for Min., Max. and Avg. Temp:<br/>"
         f"specify a start date in Y-m-d format (e.g., /api/v1.0/2016-05-18) OR<br/>"
         f"specify a date range (startDate/endDate) in Y-m-d format (e.g., /api/v1.0/2016-05-18/2016-06-18)<br/>"
    
@@ -79,15 +85,13 @@ def precipitation():
     session.close()
 
     # Create a dictionary from the row data and append to a list of precipitation
-    precipitation = []
+    precipitation_dict = {}
     
     for date,prcp in last_annual_prcp:
-            precipitation_dict = {}
             precipitation_dict[date] = prcp
-            precipitation.append(precipitation_dict)
-
+    
     # Return json data
-    return jsonify(precipitation)
+    return jsonify(precipitation_dict)
 
 #------------------------------------------------------------------------#
 @app.route("/api/v1.0/stations")
@@ -104,6 +108,14 @@ def stations():
 
     #Convert tuple to list
     stations_all = list(np.ravel(stations_all))
+
+    #Convert list to dictionary
+    # def convert(list):
+    #     res_dict = {}
+    #     for i in range(0, len(list)):
+    #         res_dict[i+1] = list[i]
+    #     return res_dict
+    # stations_dict = convert(stations_all)
 
     # Return json data
     return jsonify(stations_all)
@@ -134,9 +146,8 @@ def tobs():
 
     #close the session for tobs route
      session.close()
-
-   # Create a dictionary from the row data and append to a list of most active stations
-     most_active_temp_date = []
+    # Create a dictionary from the row data and append to a list  
+     most_active_temp_date =[]
 
      for date,tobs in temp_most_active_station:
             most_active_temp_date_dict = {}
